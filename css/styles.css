@@ -1,3 +1,13 @@
-h1{
-    color:red;
-}
+body {
+    background-color: rgb(24, 153, 104);
+  }
+  
+  h1 {
+    color: rgba(255, 255, 255, 0);
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
