@@ -231,11 +231,28 @@ $("#btn2").addEventListener("click",function(){
     myAlert("Add new email input");
 });
 
+function bind_close(){
+    let element =document.querySelectorAll(".close");
+    for(var i=element.length-1;i>=0;i--){
+        let el =element[i];
+        el.addEventListener("click", function(){
+            this.parentNode.style.display = "none";
+        });
+    }
+}
+
 function myAlert(msg){
+    //console.log($("body".childre[1]));
     var div=document.createElement("div");
     div.classList.add("alert");
     div.innerHTML=msg;
+    var close =document.createElement("span");
+    close.style.float="right";
+    close.classList.add("close");
+    close.innerHTML="X";
+    div.appendChild(close);
     $("body").insertBefore(div,$("body").firstChild);
+    bind_close();
 }
 
 function $(selector){
