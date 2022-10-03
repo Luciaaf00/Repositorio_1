@@ -1,3 +1,5 @@
+
+/*
 //alert("HELLO TO JS");
 console.log("Chavalería!!!");
 
@@ -110,9 +112,132 @@ for(;i>=0;i--){
     console.log("Entramos en la iteración de "+fourth_array[i]);
     
 }
-*/
+
 
 fourth_array.forEach(function(element){
     console.log("Entramos en la iteración de "+element);
 });
+//If /else /elseif
+let aux=3;
+if(aux>0){
+    console.log("This number is positive");
+}else if(aux<0){
+    console.log("This number is negative");
+}else{
+    console.log("This number is 0");
+}
 
+//Regular expressions
+var DNI_REGEX = /^(\d{8})([A-Z])$/;
+let dni ="12345678K";
+if(dni.match(DNI_REGEX)){
+    console.log("Correct DNI");
+}else{
+    console.log("Incorrect DNI");
+}
+//Comparison operators
+console.log(8==8);
+console.log(8=="8");
+console.log(8===8);
+console.log(8==="8");
+
+console.log(5>8);
+console.log(5<8);
+console.log(5>=8);
+console.log(5<=8);
+
+console.log(8!=8);
+console.log(8!="8");
+console.log(8!==8);
+console.log(8!=="8");
+
+
+console.log("test"=="test");
+console.log("test"==='test');
+console.log("test"=="Test");
+
+//Loop while
+var i1=1;
+while (i1<10) {
+    console.log("The number is "+i1);
+    i1++;
+}
+
+
+//Date Object 
+let today = new Date();
+let first_october = new Date(2019, 10, 1);
+console.log(today);
+console.log(first_october);
+console.log(today.getDay());
+
+if(today>first_october){
+    console.log("Today is after to first octuber");
+}else{
+    console.log("Today is before to first octuber");
+}
+*/
+
+function myFirstFunction(){
+    console.log("Thank you for click");
+}
+function mySecondFunction(){
+    console.log("Thank you for you interest");
+}
+
+//Select Dom
+var div=document.getElementById("my_div");
+div.classList.add("my_class");
+console.log(div);
+
+var div=document.getElementsByTagName("div");
+console.log(div);
+
+var second_div=document.querySelector("#my_second_div");
+console.log(second_div);
+
+/*function $(selector){
+    return document.querySelectorAll(selector);
+}
+console.log($("#my_third_div"));
+console.log($(".div_especial"));
+
+//Function types
+/*
+
+var n_elevator_2 = numbers.map(function(n){return n*n;});
+console.log(n_elevator_2);
+*/
+/*var numbers= [1,2,3,4];
+var n_elevator_2 =numbers.map((n) => { return n*n; });
+console.log(n_elevator_2);
+
+
+var n_elevator_2=numbers.map( n => n*n);
+console.log(n_elevator_2);
+*/
+//En este caso se multiplica
+let numbers= [[1,2], [2,3], [3,4], [4,5]];
+let itself =numbers.map(([x,y])=>x*y);
+console.log(itself);
+
+//Create DOM Nodes
+$("#btn2").addEventListener("click",function(){
+    var input =document.createElement("input");
+    input.setAttribute("type","email");
+    input.setAttribute("placeholder", "E-mail");
+    input.setAttribute("name", "emails[]");
+    $("#form").appendChild(input);
+    myAlert("Add new email input");
+});
+
+function myAlert(msg){
+    var div=document.createElement("div");
+    div.classList.add("alert");
+    div.innerHTML=msg;
+    $("body").insertBefore(div,$("body").firstChild);
+}
+
+function $(selector){
+    return document.querySelector(selector);
+}
