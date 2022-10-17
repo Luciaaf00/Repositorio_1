@@ -1,5 +1,6 @@
 
 /*
+/*
 //alert("HELLO TO JS");
 console.log("Chavalería!!!");
 
@@ -176,7 +177,7 @@ if(today>first_october){
 }else{
     console.log("Today is before to first octuber");
 }
-*/
+
 
 function myFirstFunction(){
     console.log("Thank you for click");
@@ -215,7 +216,7 @@ console.log(n_elevator_2);
 
 var n_elevator_2=numbers.map( n => n*n);
 console.log(n_elevator_2);
-*/
+
 //En este caso se multiplica
 let numbers= [[1,2], [2,3], [3,4], [4,5]];
 let itself =numbers.map(([x,y])=>x*y);
@@ -258,3 +259,63 @@ function myAlert(msg){
 function $(selector){
     return document.querySelector(selector);
 }
+
+*/
+
+
+
+
+//Split
+var testString="a,b,c,d,e,f,2,3,44,43";
+var testArray=testString.split(",");
+console.log(testArray)
+
+//Join 
+var testJoin= testArray.join(".");
+console.log(testJoin);
+
+//Filter
+var testArray=[10,2,3,5,9];
+var pairnumber=testArray.filter((num)=>{
+    return num%2===0;
+
+})
+console.log(pairnumber);
+//MAp
+var testArray1=[1,2,3,5,7];
+var testArray2=testArray1.map(function(num){
+    return num*num;
+});
+
+console.log(testArray2);
+
+//Callbacks
+setTimeout(function(){
+    console.log("hello world");
+
+}, 2500);
+//Closures
+document.getElementById("btn3").addEventListener("click",()=>{
+    console.log("Click detected");
+})
+
+//jason
+var course ={
+    title: "Course JS Advanced",
+    section: 4,
+    subsection:6,
+    teacher: "Javier Prada",
+    intro: function(){
+        console.log("Welcome to "+this.title+" with "+this.section+" sections")
+        this.function2();
+            
+        
+    },
+    function2: function(){
+        console.log("Into to second function");
+
+    }
+}
+console.log(course["teacher"]);
+console.log(course.title);
+console.log(course.intro());
