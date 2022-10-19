@@ -263,7 +263,7 @@ function $(selector){
 */
 
 
-
+/*
 
 //Split
 var testString="a,b,c,d,e,f,2,3,44,43";
@@ -319,3 +319,20 @@ var course ={
 console.log(course["teacher"]);
 console.log(course.title);
 console.log(course.intro());
+*/
+var course={
+    title: "Course JS advanced",
+    section:4,
+    subsection:6,
+    teacher:"Javier Prada",
+    intro: function(){
+        return "Welcome to "+this.title+" with "+this.section+" sections.";
+    }
+}
+
+console.log(course["teacher"]);
+console.log(course.teacher);
+
+let text = course.intro();
+
+console.log(text);
