@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>div {width: 200px;height: 100px;border: 1px solid black;}</style>
+</head>
+<body>
+    <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div>
+    <p>Mouse over the rectangle above, and get the coordinates of your mouse pointer.</p>
+    <p id="demo"></p>
+    <script>
+        function myFunction(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            var coor = "Coordinates: (" + x + "," + y + ")";
+            document.getElementById("demo").innerHTML = coor;
+        }
+        function clearCoor() {
+            document.getElementById("demo").innerHTML = "";
+        }
+/*
+        var horaformatoGMT = new Date().toGMTString();
+        var ruta ="/inicio/";
+        var nombreDominio = "miweb.com"
+
+
+        document.cookie="nombreCookie=datosCookie[; expires=horaformatoGMT][; path=ruta][; domain=nombreDominio][; secure]";
+        console.log(document.cookie.datosCookie[path]);
+        */
+       
+        document.cookie = "nombre=oeschger";
+        document.cookie = "comida_preferida=tripa";
+        document.cookie="usuario=Rodolfo;  expires= 31 Dec 2022 23:59:59 GMT";
+        
+     
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        var expiresdate = new Date(2068, 1, 02, 11, 20);
+        document.cookie="usuario=Guillermo; expiresdate.toUTCString()";
+
+        function leerCookie(nombre) {
+            a = document.cookie.substring(document.cookie.indexOf(nombre + '=') + nombre.length +
+                1, document.cookie.length);
+            if (a.indexOf(';') != -1) a = a.substring(0, a.indexOf(';'))
+            return a;
+        }
+        
+        var now = new Date();
+                    now.setTime(now.getTime() + 1 * 3600 * 1000);
+                    document.cookie = "expires=" + now.toUTCString() + ";"
+        console.log(getCookie("name"));
+    </script>
+</body>
+</html>
+    
+
